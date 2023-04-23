@@ -1,0 +1,32 @@
+{% load static %}
+</br></br>
+<footer class="text-black" style="background-color: #ffffff;">
+    </br>
+    <div class="px-5">
+        <section>
+            <div class="row">
+                <div class="col text-start">
+                    <span><code>Stack</code> <a target="_blank" rel="noopener noreferrer" href="{% url 'api:Docs' %}"><i class="fa-solid fa-layer-group"></i></a></span>
+                    <br><br>
+                    <span><code>GitHub</code> <a target="_blank" rel="noopener noreferrer" href="https://github.com/growth-delta"><i class="fa-brands fa-github fa-lg"></i></a></span>
+                    <br><br>
+                    <span><code>Media</code> <a target="_blank" rel="noopener noreferrer" href="{% url 'content:Content' %}"><i class="fa-brands fa-youtube fa-lg"></i></a></span>
+                    <br><br>
+                    <span><a target="_blank" rel="noopener noreferrer" href="/sitemap.xml"><code>SiteMap</code> <i class="fa-solid fa-earth-africa"></i></a></span>
+                </div>
+                <div class="col text-end">
+                    <a href="#"><img class="center" src="{% static 'images/photos/presidential_dollar.png' %}" width="90" height="90"></a>
+                </div>
+            </div>
+            <div class="text-center">
+                <small>
+                    <p>Noah Morris © Copyright <span id="copyright-year"></span></p>
+                    <script>document.getElementById('copyright-year').innerText = (new Date()).getFullYear();</script>
+                    <!-- Please Accredit my website in your project -->
+                    <b class="text-success garamond">Δ Django & React Configuration IV 22</b> | <a target="_blank" href="https://growth-delta.com/"> Growth-Delta.com</a>
+                </small>
+            </div>
+        </section>   
+    </div>
+    </br>
+</footer>

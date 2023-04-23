@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block meta %}
+  <!-- On Page META SEO -->
+  <title>{% block page_title %} Content | Noah Morris {% endblock %}</title>
+  <meta name="description" content="{% block description %} Site Documentation {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+  {{ content|safe }}
+{% endblock %}

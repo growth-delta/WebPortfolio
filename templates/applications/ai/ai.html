@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block meta %}
+  <!-- On Page META SEO -->
+  <title>{% block page_title %} Ai | Noah Morris {% endblock %}</title>
+  <meta name="description" content="{% block description %} Ai Projects {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+<body class="bg-black">
+    <div class="bg-dark bg-opacity-50 p-4">
+        <div class="row">
+
+            <div class="col-md-6 mb-4 btn">
+                <a class="card-link" href="{% url 'ai:gpt_code' %}">
+                    <div class="card bg-black bg-opacity-75 p-4">
+                        <div class="card-header fs-3">CodeGPT</div>
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus mi, luctus vitae sem nec, 
+                            luctus consequat elit. In at laoreet mi, ut commodo sapien. Nam elementum purus urna, at pretium 
+                            felis efficitur in. Nulla bibendum in urna non lacinia. Praesent in scelerisque sapien. Proin id 
+                            diam vel justo mattis consectetur vitae et mauris. Donec nunc nisi, suscipit at condimentum et, 
+                            sagittis convallis massa. Nullam vitae magna lectus. Vivamus porta et tellus id lacinia. Pellentesque 
+                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pretium ante dolor, 
+                            et egestas felis vulputate ut. Ut scelerisque eu purus nec blandit.
+                        </div>
+                        <div class="card-footer fs-2">CodeGPT</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 mb-4 btn">
+                <a class="card-link" href="{% url 'api:AI_Industry' %}">
+                    <div class="card bg-black bg-opacity-75 p-4">
+                        <div class="card-header fs-3">AI Software Product API</div>
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus mi, luctus vitae sem nec, 
+                            luctus consequat elit. In at laoreet mi, ut commodo sapien. Nam elementum purus urna, at pretium 
+                            felis efficitur in. Nulla bibendum in urna non lacinia. Praesent in scelerisque sapien. Proin id 
+                            diam vel justo mattis consectetur vitae et mauris. Donec nunc nisi, suscipit at condimentum et, 
+                            sagittis convallis massa. Nullam vitae magna lectus. Vivamus porta et tellus id lacinia. Pellentesque 
+                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pretium ante dolor, 
+                            et egestas felis vulputate ut. Ut scelerisque eu purus nec blandit.
+                        </div>
+                        <div class="card-footer fs-2">AI Industry</div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div id="ai_industry"></div>
+        </div>
+
+    </div>
+</body>
+{% endblock %}
+{% block page_js %}
+        <!-- JavaScript  -->
+    <script type="text/javascript" src="{% static 'javascript/bundles/AiTable-bundle.js' %}"></script>
+{% endblock page_js %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+  <!-- On Page META SEO -->
+  <title>{% block page_title %} Ai Coding Bots {% endblock %}</title>
+  <meta name="description" content="{% block description %}Coding Bot, which uses Ai to Generate & Fix Code.{% endblock %}">
+  <meta name="keywords" content="{% block keywords %}OpenAi, text-davinci-003, Coding, Django, Python{% endblock %}">
+{% endblock meta %}
+
+{% block page_head %}
+        <!-- Prism CSS -->
+    <link rel="stylesheet" href="{% static 'styles/code/prism.css' %}">
+{% endblock %}
+
+{% block body %}
+    </br>
+    <!-- Alpine.js for Tab Active Animation -->
+    <!-- <div x-data="{ activeTab: '{{ request.resolver_match.view_name }}' }" class="d-flex justify-content-center">
+        <ul class="nav nav-tabs fs-6 fw-bold">
+        <li class="nav-item">
+            <a class="nav-link" href="#" x-bind:class="{ 'active': activeTab === 'ai:gpt_code' }">Ai: Code</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" x-bind:class="{ 'active': activeTab === 'ai:gpt_debug' }">Ai: Debug</a>
+        </li>
+        </ul>
+    </div> -->
+
+    <div class="card">
+        <div class="bg-secondary p-5">
+            <div class="text-white text-center">
+                <div class="fs-1 fw-bold">
+                    <i class="text-success fa-solid fa-code fa-lg"></i><i class="text-warning fa-solid fa-code fa-lg"></i>
+                </div>
+                </br>
+                <h2 class="text-center fs-1 fs-bold">{{Page_Title}}</h2>
+            </div>
+            {% if response %}
+
+<pre>
+<code class="line-numbers language-{{language}}">
+{{response|safe}}
+</code>
+</pre>
+            {% else %}
+<pre>
+<code class="line-numbers language-python">
+
+
+
+
+</code>
+</pre>
+
+            {% endif %}
+            <form method=POST action="{% url 'ai:gpt_code' %}">
+                <br/>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <select class="form-select mb-3" name="language">
+                        <option selected>Select a Programming Language</option>
+                        {% for language in languages %}
+                            <option value="{{language}}">{{language}}</option>
+                        {% endfor %}
+                    </select>
+                    <br/>
+                    <!-- <textarea class="form-control" name="code" placeholder="Debug a Code" rows="5"></textarea> -->
+                    <textarea class="form-control" name="code" placeholder="{{Page_Placeholder}}" rows="5" onkeydown="if(event.keyCode==9){event.preventDefault();this.value+=String.fromCharCode(9);}"></textarea>
+                    <br/>
+                    <div class="col-auto text-white">
+                        <button type="submit" class="btn btn-secondary mb-3 w-100 fw-bold fs-1">
+                            <i class="text-warning fa-solid fa-bolt fa-md"></i>
+                            PROMPT
+                            <i class="text-warning fa-solid fa-bolt fa-md"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>🤖🧠</div>
+            </form>
+        </div>
+    </div>
+
+    </br>
+
+    {{content|safe}}
+
+{% endblock %}
+
+{% block page_js %}
+        <!-- Prism -->
+    <script type="text/javascript" src="{% static 'styles/code/prism.js' %}"></script>
+{% endblock page_js %}
