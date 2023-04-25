@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'applications.website.apps.WebsiteConfig', # Website Pages
     'applications.content.apps.ContentConfig', # .md Content Management System
     'applications.ai.apps.AiConfig', # Ai
+    'applications.analytics.apps.AnalyticsConfig', # Analytics
 ]
 
 

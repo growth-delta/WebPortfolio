@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
   entry: {
     site: './frontend/javascript/site.js',
-    AiTable: './frontend/javascript/applications/AiTable.jsx',
+    MarineTraffic: './frontend/javascript/applications/MarineTraffic.jsx',
+    Table_Ai: './frontend/javascript/applications/Table_Ai.jsx',
+    Table_Securities: './frontend/javascript/applications/Table_Securities.jsx',
   },
   output: {
     filename: '[name]-bundle.js',

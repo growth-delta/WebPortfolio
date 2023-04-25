@@ -36,4 +36,5 @@ urlpatterns = [
     path('data/api/', include('applications.api.urls')), # API | Restful API
     # Apps
     path('artificial-intelligence/', include('applications.ai.urls')), # Ai
+    path('analytics/', include('applications.analytics.urls')), # Analytics
 ]

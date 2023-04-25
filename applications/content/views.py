@@ -11,3 +11,12 @@ def Content(request):
     content = markdown.markdown(markdown_text)
 
     return render(request, 'applications/content/Content.html', {'content': content})
+
+def Ai(request):
+
+    markdown_file = os.path.join(os.path.dirname(__file__), 'cms', 'Ai.md')
+    with open(markdown_file, 'r') as file:
+        markdown_text = file.read()
+    content = markdown.markdown(markdown_text)
+
+    return render(request, 'applications/content/Content.html', {'content': content})

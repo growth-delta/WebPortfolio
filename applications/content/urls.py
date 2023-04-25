@@ -7,4 +7,5 @@ from . import views
 app_name = 'content'
 urlpatterns = [
     path('content/', views.Content, name='Content'),
+    path('content/blog/ai/', views.Ai, name='Ai'),
 ]

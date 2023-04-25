@@ -17,34 +17,29 @@
                 <a class="card-link" href="{% url 'ai:gpt_code' %}">
                     <div class="card bg-black bg-opacity-75 p-4">
                         <div class="card-header fs-3">CodeGPT</div>
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus mi, luctus vitae sem nec, 
-                            luctus consequat elit. In at laoreet mi, ut commodo sapien. Nam elementum purus urna, at pretium 
-                            felis efficitur in. Nulla bibendum in urna non lacinia. Praesent in scelerisque sapien. Proin id 
-                            diam vel justo mattis consectetur vitae et mauris. Donec nunc nisi, suscipit at condimentum et, 
-                            sagittis convallis massa. Nullam vitae magna lectus. Vivamus porta et tellus id lacinia. Pellentesque 
-                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pretium ante dolor, 
-                            et egestas felis vulputate ut. Ut scelerisque eu purus nec blandit.
+                        <div class="card-body text-start">
+                            CodeGPT is a Programming assistant built on Open Ai. The Coding Bot uses text-davinci-003 LLM to generate Code 
+                            in 15 different languages. The model produces good results out of the box, you must define a language, which you want CodeGPT 
+                            to respond in. You can then prompt the bot with either; the problem you are trying to solve (in natural language), or the code
+                            you have written so far. CodeGPT will depending on your Prompt, produce the lines of code to solve your problem, or Debug the code which
+                            you have prompted it with, the code is returned in an IDE friendly format thanks to the help of Prism.js
                         </div>
-                        <div class="card-footer fs-2">CodeGPT</div>
+                        <div class="card-footer text-start fs-5">AI Coding Assistant | Debug, Improve</div>
                     </div>
                 </a>
             </div>
 
             <div class="col-md-6 mb-4 btn">
-                <a class="card-link" href="{% url 'api:AI_Industry' %}">
+                <a class="card-link" href="{% url 'api:AI_Industry' %}" target="_blank" rel="noopener noreferrer">
                     <div class="card bg-black bg-opacity-75 p-4">
                         <div class="card-header fs-3">AI Software Product API</div>
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacus mi, luctus vitae sem nec, 
-                            luctus consequat elit. In at laoreet mi, ut commodo sapien. Nam elementum purus urna, at pretium 
-                            felis efficitur in. Nulla bibendum in urna non lacinia. Praesent in scelerisque sapien. Proin id 
-                            diam vel justo mattis consectetur vitae et mauris. Donec nunc nisi, suscipit at condimentum et, 
-                            sagittis convallis massa. Nullam vitae magna lectus. Vivamus porta et tellus id lacinia. Pellentesque 
-                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pretium ante dolor, 
-                            et egestas felis vulputate ut. Ut scelerisque eu purus nec blandit.
+                        <div class="card-body text-start">
+                            An API which I am building... WIP. This is an extensive list of Software products implementing Ai at the core of their SaaS product offerings.
+                            As Artificial Intelligence emerges and causes disruption across all sectors and industries, I want to align my efforts and ride the economic tailwind, 
+                            presented by this refinement of interacting with machine learning algorithms. According to a Statita report, Ai market will be worth > 1 Trillion USD by 2028, this 
+                            presents a fantastic and high probability opportunity. I am collating this list so I can follow the practical applications which engineers and entrepreneurs 
                         </div>
-                        <div class="card-footer fs-2">AI Industry</div>
+                        <div class="card-footer text-start fs-5">Artificial Intelligence Industry Data API</div>
                     </div>
                 </a>
             </div>
@@ -52,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div id="ai_industry"></div>
+            <div id="root"></div>
         </div>
 
     </div>
@@ -60,5 +55,5 @@
 {% endblock %}
 {% block page_js %}
         <!-- JavaScript  -->
-    <script type="text/javascript" src="{% static 'javascript/bundles/AiTable-bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'javascript/bundles/Table_Ai-bundle.js' %}"></script>
 {% endblock page_js %}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-function AiTable({ apiUrl, columnHeaders, columnLinks }) {
+function Table({ apiUrl, columnHeaders, columnLinks }) {
   const [data, setData] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
 
@@ -45,36 +45,38 @@ function AiTable({ apiUrl, columnHeaders, columnLinks }) {
   };
 
   return (
-    <div className='card p-3 overflow-auto' style={{ height: '315px' }}>
-      <table className="table table-sm table-striped table-hover">
-        <thead className="bg-white sticky-top">
-          <tr>
-            {columnHeaders.map(header => (
-              <th className='text-nowrap' key={header} onClick={() => handleSort(header)}>
-                {header} <i className="fa-solid fa-filter fa-2xs"></i>
-              </th>
-            ))}
-          </tr>
-        </thead>
-          <tbody>
-            {data.map(item => (
-              <tr key={item.id}>
-                {columnHeaders.map(header => (
-                  renderCell(item, header)
-                ))}
-              </tr>
-            ))}
-          </tbody>
-      </table>
+    <div className='card p-2'>
+      <div className='overflow-auto' style={{ height: '315px' }}>
+        <table className="table table-sm table-striped table-hover">
+          <thead className="bg-white sticky-top">
+            <tr>
+              {columnHeaders.map(header => (
+                <th className='text-nowrap' key={header} onClick={() => handleSort(header)}>
+                  {header} <i className="fa-solid fa-filter fa-2xs"></i>
+                </th>
+              ))}
+            </tr>
+          </thead>
+            <tbody>
+              {data.map(item => (
+                <tr key={item.id}>
+                  {columnHeaders.map(header => (
+                    renderCell(item, header)
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+        </table>
+      </div>
     </div>
   );
 };
 
 ReactDOM.render(
-  <AiTable
+  <Table
     apiUrl="/data/api/ai/product/"
     columnHeaders={['Owner', 'Value', 'Products', 'Documentation']}
     columnLinks={['Products', 'Documentation']}
   />,
-  document.getElementById('ai_industry')
+  document.getElementById('root')
 );

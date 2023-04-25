@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+    <!-- On Page META SEO -->
+    <title>{% block page_title %} United States Economy {% endblock %}</title>
+    <meta name="description" content="{% block description %} Macro {% endblock %}">
+    <meta name="keywords" content="{% block keywords %} React.js, Django {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+<body class="bg-black text-white">
+    <div id="root"></div>
+    {{content|safe}}
+</body>
+{% endblock %}
+
+{% block page_js %}
+    <script type="text/javascript" src="{% static 'JavaScript/bundles/MacroEconomic-bundle.js' %}"></script>
+{% endblock page_js %}

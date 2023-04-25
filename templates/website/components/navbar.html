@@ -12,13 +12,29 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
         <li class="nav-item dropdown">
-          <a class="nav-link" href="{% url 'content:Content' %}">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Content
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark bg-black">
+            <li><a class="dropdown-item" href="{% url 'content:Content' %}">About</a></li>
+            <li><a class="dropdown-item" href="{% url 'content:Ai' %}">Ai</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'analytics:index' %}">
+            3D Models
           </a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{% url 'website:Securities' %}">
+            Securities
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'analytics:index' %}">
             Analytics
           </a>
         </li>
@@ -30,9 +46,19 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#">
-            OpenSource
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Applications
           </a>
+          <ul class="dropdown-menu dropdown-menu-dark bg-black">
+            <li><a class="dropdown-item" href="#">Recommend Retail Price</a></li>
+            <li><a class="dropdown-item" href="#">News Feeds</a></li>
+            <li><a class="dropdown-item" href="#">Markets</a></li>
+          </ul>
+          <ul class="dropdown-menu dropdown-menu-dark bg-black">
+            <li><a class="dropdown-item" href="#">Recommend Retail Price</a></li>
+            <li><a class="dropdown-item" href="#">News Feeds</a></li>
+            <li><a class="dropdown-item" href="#">Markets</a></li>
+          </ul>
         </li>
         
         <li class="nav-item dropdown">
@@ -50,8 +76,17 @@
         <li>
           <div class="btn">
             <a class="card-link" href="{% url 'ai:index' %}">
-              <div class="card bg-success bg-opacity-75 p-1">
-                <div class="fs-6 fw-bold">Professional Services <i class="fa-solid fa-database"></i></div>
+              <div class="card bg-warning bg-opacity-75 p-1">
+                <div class="fs-6 fw-bold">Contact <i class="fa-regular fa-envelope"></i></div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="btn">
+            <a class="card-link" href="{% url 'ai:index' %}">
+              <div class="card bg-info bg-opacity-75 p-1">
+                <div class="fs-6 fw-bold">Professional Services <i class="fa-solid fa-briefcase"></i></div>
               </div>
             </a>
           </div>

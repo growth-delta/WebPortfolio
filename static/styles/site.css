@@ -19,13 +19,27 @@ p {
 }
 
 .card-link {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
 }
+
 .card-link:hover {
     color: rgb(170, 170, 170);
 }
 
 table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
     content: " \25B4\25BE" 
+}
+
+.navbar {
+    z-index: 200; /* ensure navbar appears above sticky-top thead */
+}
+  
+.bg-white.sticky-top {
+z-index: 100; /* adjust as needed based on your specific sticky-top thead implementation */
+}
+
+a.a-link {
+    color: #ffffff;
+    /* text-decoration: none; */
 }

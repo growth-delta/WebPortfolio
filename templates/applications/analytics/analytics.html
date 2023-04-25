@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block meta %}
+  <!-- On Page META SEO -->
+  <title>{% block page_title %} Analytics | Noah Morris {% endblock %}</title>
+  <meta name="description" content="{% block description %} Ai Projects {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+<body class="bg-black">
+    <div class="bg-dark bg-opacity-50 p-4">
+        <div class="row">
+
+            <div class="col-md-4 mb-4 btn">
+                <a class="card-link" href="{% url 'analytics:MacroEconomic' %}">
+                    <div class="card bg-black bg-opacity-75 p-4">
+                        <div class="card-header"><h2>MacroEconomic</h2></div>
+                        <div class="card-body text-start">
+                            MacroEconomic dashboard for tracking and measuring the US business cycle; Leading Indicators, Inflation & Unemployment, Interest Rates & Money Supply.
+                        </div>
+                        <div class="row col-md bg-opacity-25 p-2">
+                            <a href="{% url 'analytics:MacroEconomic' %}"><img class="img-fluid" src="{% static 'images/photos/macro.png' %}" style="height: 250px; width: auto;"></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-4 btn">
+                <a class="card-link" href="{% url 'analytics:QuantitativeAnalytics' %}">
+                    <div class="card bg-black bg-opacity-75 p-4">
+                        <div class="card-header"><h2>Quantitative Analytics</h2></div>
+                        <div class="card-body text-start">
+                            Quantitative Analytics of US stocks | Dow 30. Statistics and Probability related backtests of returns for The Dow Jones Industrial Average constituents under various conditions.
+                        </div>
+                        <div class="row col-md bg-opacity-25 p-2">
+                            <a href="{% url 'analytics:QuantitativeAnalytics' %}"><img class="img-fluid" src="{% static 'images/photos/ai.jpg' %}" style="height: 250px; width: auto;"></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-4 btn text-start">
+                <a class="card-link" href="{% url 'analytics:MarineTraffic' %}">
+                    <div class="card bg-black bg-opacity-75 p-4">
+                        <div class="card-header"><h2>Marine Traffic</h2></div>
+                        <div class="card-body text-start">
+                            Tracking thousands of ships; AIS data, all around the United Kingdom in this instance. The data is live, however to save compute I may lagg the data, to the previous commit.
+                        </div>
+                        <div class="row col-md bg-opacity-25 p-2 text-center">
+                            <a href="{% url 'analytics:MarineTraffic' %}"><img class="img-fluid" src="{% static 'images/photos/ship.png' %}" style="height: 250px; width: auto;"></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+{% endblock %}
+{% block page_js %}
+    <!-- <script type="text/javascript" src="#"></script> -->
+{% endblock page_js %}

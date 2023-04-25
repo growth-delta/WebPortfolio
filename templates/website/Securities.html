@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+    <!-- On Page META SEO -->
+    <title>{% block page_title %} Stock Market Models {% endblock %}</title>
+    <meta name="description" content="{% block description %} Micro {% endblock %}">
+    <meta name="keywords" content="{% block keywords %} React.js, Django {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+<body class="bg-black text-white">
+    {{content|safe}}
+    <div id="root"></div>
+</body>
+{% endblock %}
+
+{% block page_js %}
+    <script type="text/javascript" src="{% static 'JavaScript/bundles/Table_Securities-bundle.js' %}"></script>
+{% endblock page_js %}

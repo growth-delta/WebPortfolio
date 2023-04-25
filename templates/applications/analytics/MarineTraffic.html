@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+    <!-- On Page META SEO -->
+    <title>{% block page_title %} Marine Traffic App {% endblock %}</title>
+    <meta name="description" content="{% block description %} Take Notes {% endblock %}">
+    <meta name="keywords" content="{% block keywords %} React.js, Django {% endblock %}">
+{% endblock meta %}
+
+{% block page_head %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+{% endblock %}
+
+{% block body %}
+<body class="bg-black text-white">
+    <div id="root"></div>
+    {{content|safe}}
+</body>
+{% endblock %}
+
+{% block page_js %}
+    <script type="text/javascript" src="{% static 'JavaScript/bundles/MarineTraffic-bundle.js' %}"></script>
+{% endblock page_js %}

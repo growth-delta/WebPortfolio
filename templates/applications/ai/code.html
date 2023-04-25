@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block body %}
-    </br>
+<body class="bg-black">
     <!-- Alpine.js for Tab Active Animation -->
     <!-- <div x-data="{ activeTab: '{{ request.resolver_match.view_name }}' }" class="d-flex justify-content-center">
         <ul class="nav nav-tabs fs-6 fw-bold">
@@ -27,64 +27,56 @@
         </ul>
     </div> -->
 
-    <div class="card">
-        <div class="bg-secondary p-5">
+        <div class="bg-secondary bg-opacity-25 p-5">
             <div class="text-white text-center">
-                <div class="fs-1 fw-bold">
+
+                <div class="fs-1 fw-bold mb-2">
                     <i class="text-success fa-solid fa-code fa-lg"></i><i class="text-warning fa-solid fa-code fa-lg"></i>
                 </div>
-                </br>
-                <h2 class="text-center fs-1 fs-bold">{{Page_Title}}</h2>
-            </div>
-            {% if response %}
 
+                <h1 class="text-center"><b>{{Page_Title}}</b></h1>
+            </div>
 <pre>
+            {% if response %}
 <code class="line-numbers language-{{language}}">
 {{response|safe}}
 </code>
-</pre>
             {% else %}
-<pre>
 <code class="line-numbers language-python">
 
 
 
 
 </code>
-</pre>
-
             {% endif %}
-            <form method=POST action="{% url 'ai:gpt_code' %}">
-                <br/>
+</pre>
+            <form class="p-4" method=POST action="{% url 'ai:gpt_code' %}">
                 {% csrf_token %}
-                <div class="mb-3">
-                    <select class="form-select mb-3" name="language">
-                        <option selected>Select a Programming Language</option>
-                        {% for language in languages %}
-                            <option value="{{language}}">{{language}}</option>
-                        {% endfor %}
-                    </select>
-                    <br/>
-                    <!-- <textarea class="form-control" name="code" placeholder="Debug a Code" rows="5"></textarea> -->
-                    <textarea class="form-control" name="code" placeholder="{{Page_Placeholder}}" rows="5" onkeydown="if(event.keyCode==9){event.preventDefault();this.value+=String.fromCharCode(9);}"></textarea>
-                    <br/>
-                    <div class="col-auto text-white">
-                        <button type="submit" class="btn btn-secondary mb-3 w-100 fw-bold fs-1">
-                            <i class="text-warning fa-solid fa-bolt fa-md"></i>
-                            PROMPT
-                            <i class="text-warning fa-solid fa-bolt fa-md"></i>
-                        </button>
-                    </div>
+                <select class="form-select mb-4" name="language">
+                    <option selected>Select a Programming Language</option>
+                    {% for language in languages %}
+                        <option value="{{language}}">{{language}}</option>
+                    {% endfor %}
+                </select>
+                <!-- <textarea class="form-control" name="code" placeholder="Debug a Code" rows="5"></textarea> -->
+                <textarea class="form-control mb-4" name="code" placeholder="{{Page_Placeholder}}" rows="5" onkeydown="if(event.keyCode==9){event.preventDefault();this.value+=String.fromCharCode(9);}"></textarea>
+                <div class="col-auto text-white mb-4">
+                    <button type="submit" class="btn btn-secondary w-100 fw-bold fs-3">
+                        <i class="text-warning fa-solid fa-bolt fa-md"></i>
+                        PROMPT
+                        <i class="text-warning fa-solid fa-bolt fa-md"></i>
+                    </button>
                 </div>
-                <div>🤖🧠</div>
+                <div class="text-end text-danger">🤖<i class="fa-regular fa-eye"></i>🧠</div>
             </form>
         </div>
     </div>
 
     </br>
-
-    {{content|safe}}
-
+    <div class="p-5 text-white">
+        {{content|safe}}
+    </div>
+</body>
 {% endblock %}
 
 {% block page_js %}

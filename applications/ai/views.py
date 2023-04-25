@@ -25,7 +25,7 @@ languages = ['css', 'csv', 'django', 'excel-formula', 'gitignore', 'javascript',
 
 def GPTCode(request):
     '''OpenAi | Chat GPT. This is a view which creates a Django form which prompts GPT to Suggest Code'''
-    Page_Title = 'Code GPT'
+    Page_Title = 'CodeGPT'
     Page_Placeholder = 'Write your Prompt and Code here.'
     if request.method == 'POST':
         code = request.POST['code']
@@ -83,7 +83,7 @@ def GPTCode(request):
 
 def GPTDebug(request):
     '''OpenAi | Chat GPT. This is a view which creates a Django form which prompts GPT to Debugging Code'''
-    Page_Title = 'Debug GPT'
+    Page_Title = 'DebugGPT'
     Page_Placeholder = 'Write the code which you want to Debug here.'
     if request.method == 'POST':
         code = request.POST['code']
